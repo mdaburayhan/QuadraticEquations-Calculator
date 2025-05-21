@@ -4,9 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     >
+    <data>
+        <variable
+            name="myEquation"
+            type="com.arsoft.quadraticequationscalculator.MyEquation" />
 
 
-
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -17,6 +21,7 @@
 
 
         <EditText
+            android:text="@={myEquation.a}"
             android:id="@+id/editText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -30,6 +35,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
+            android:text="@={myEquation.b}"
             android:id="@+id/editText2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -43,6 +49,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editText" />
 
         <EditText
+            android:text="@={myEquation.c}"
             android:id="@+id/editText3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -56,6 +63,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
         <Button
+            android:onClick="@{myEquation::solveEquation}"
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
